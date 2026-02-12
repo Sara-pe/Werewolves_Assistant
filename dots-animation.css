@@ -1,0 +1,109 @@
+ /* -----------------------
+ ANIMATION DOTS LOADING 
+ --------------------------*/
+p {
+    font-size: 20px;
+    transform: translateY(0px);
+   
+}
+.dot {
+ display: inline-block;
+}
+
+ .dot-1 {
+    animation: dot1 1.2s linear 0s infinite;
+ }
+
+  @keyframes dot1 {
+   0% {
+   opacity: 100%;
+   }  
+   50% {
+  opacity: 20%;
+   }
+   100% {
+ opacity: 100%;
+   }
+}
+
+ .dot-2 {
+    animation: dot2 1.2s linear 0.5s infinite;
+ }
+
+  @keyframes dot2 {
+   0% {
+   opacity: 100%;
+   }  
+   50% {
+  opacity: 20%;
+   }
+   100% {
+ opacity: 100%;
+   }
+}
+
+ .dot-3 {
+    animation: dot3 1.2s linear 1s infinite;
+ }
+
+  @keyframes dot3 {
+   0% {
+   opacity: 100%;
+   }  
+   50% {
+  opacity: 20%;
+   }
+   100% {
+ opacity: 100%;
+   }
+}
+
+
+ /*.dot-1 {
+    animation: dot1 2.4s ease-in-out 1s infinite;
+ }
+
+ @keyframes dot1 {
+   0% {
+   transform: translateY(0px);
+   }  
+   50% {
+  transform: translateY(-4px);
+   }
+   100% {
+  transform: translateY(0px);
+   }
+}
+
+
+ .dot-2 {
+    animation: dot2 2.4s ease-in-out 0.8s infinite;
+ }
+
+ @keyframes dot2 {
+   0% {
+   transform: translateY(0px);
+   }  
+   50% {
+  transform: translateY(-4px);
+   }
+   100% {
+  transform: translateY(0px);
+   }
+}
+
+ .dot-3 {
+    animation: dot3 2.4s ease-in-out 0s infinite;
+ }
+
+ @keyframes dot3 {
+   0% {
+   transform: translateY(0px);
+   }  
+   50% {
+  transform: translateY(-4px);
+   }
+   100% {
+  transform: translateY(0px);
+   }
+} */

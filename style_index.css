@@ -1,0 +1,105 @@
+body {
+    background-color: var(--dark-blue);
+    background-image: url("./elements/Images/werewolves-transparency.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--gray-light);
+}
+
+
+.btn-1 {
+    background: linear-gradient(199deg, #6A8AF8 4.13%, #3E5192 93.7%);
+    width: 208px;
+}
+
+.btn-2 {
+    background: var(--blue-medium);
+    width: 208px;
+}
+
+.img-logo {
+    width: 75px;
+    height: auto;
+    color: var(--gray-light)
+}
+
+.title {
+    font-weight: 500;
+}
+
+main {
+
+    flex: 1;
+    /*! It occupies all the available space*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main > div:first-child {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+main > div:first-child > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-hp {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+
+
+/*PHONE VERSION */
+
+@media (max-width: 700px) {
+
+  main {
+ 
+  
+  width: calc(100% - 16px);
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+
+
+}
+
+
+
+
+
+h1 {
+    font-family: "Saprona", sans-serif;
+    font-weight: 200; /* UltraLight */
+    font-size: 24px;
+}
+
+/* h2: 24px Light */
+h2 {
+    font-family: "Saprona", sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 20px;
+}
+
+.title {
+    text-align: center;
+}
+}

@@ -1,0 +1,342 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.body-villagers {
+  background-image: url('./elements/Images/AdobeStock_633198156_medium.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.body-villagers,
+.body-wolves {
+  background-color: #313c5fb1;
+  /*background-color: #313C5F;*/
+  background-blend-mode: overlay;
+}
+
+.body-wolves {
+  background-image: url('./elements/Images/AdobeStock_1623226067.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.btn-prim-over {
+  display: flex;
+  width: 264px;
+  height: 48px;
+  padding: 20px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: linear-gradient(199deg, #617EE2 4.13%, #43579D 40.73%);
+  color: var(#F6F8FA);
+  text-align: center;
+  font-family: "Anton";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+
+
+main {
+
+  flex: 1;
+  /*! It occupies all the available space*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   min-height: 100vh;
+
+
+}
+
+
+.final-container {
+  display: flex;
+  width: 572px;
+  padding: 60px 20px 32px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  border-radius: 72px;
+  background: rgba(49, 60, 95, 0.70);
+
+  position: relative;
+
+}
+
+.village {
+  width: auto;
+  height: 100px;
+}
+
+.trophy {
+  height: 160px;
+  width: auto;
+  position: absolute;
+
+  top: -100px;
+
+}
+
+.final-text-big {
+  text-align: center;
+  font-family: "Anton";
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #EAEEF6 56.05%, #FFE9B3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-top: -32px;
+
+}
+
+.final-text-small {
+  color: #EAEEF6;
+  text-align: center;
+  font-family: "Anton";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.secondary-text {
+  color: #FFAB69;
+  text-align: center;
+  font-family: Anton;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: -4px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+
+}
+
+
+
+/* FINAL CONTAINER aparece primero */
+.final-container {
+  opacity: 0;
+  transform: translateY(-80px);
+  animation: fall 1s ease-out forwards;
+  animation-delay: 0s;
+}
+
+/* TROPHY cae después */
+.trophy {
+  opacity: 0;
+  transform: translateY(-80px);
+  animation: fall 1s ease-out forwards;
+  animation-delay: 0.9s;
+  /* después del final-container */
+}
+
+/* GAME OVER aparece después */
+.game-over {
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
+  animation-delay: 2s;
+}
+
+/* BOTÓN al final
+.btn-prim-over {
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards;
+  animation-delay: 2s;
+} */
+
+/* Animaciones */
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fall {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-prim-over {
+  background: linear-gradient(199deg, #6A8AF8 4.13%, #3E5192 93.7%);
+  font-weight: 300;
+  /* Light */
+  font-size: 20px;
+}
+
+.btn-prim-over:hover {
+
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+
+.confeti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+
+
+  opacity: 0;
+  animation: confetiAnim 2s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes confetiAnim {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  /* empieza visible después del delay */
+  90% {
+    opacity: 1;
+  }
+
+  /* se mantiene visible */
+  100% {
+    opacity: 0;
+  }
+
+  /* desaparece al final */
+}
+
+/*PHONE VERSION */
+
+@media (max-width: 700px) {
+
+
+.trophy {
+
+ position: static;
+ margin-bottom: 12px;
+
+}
+
+  main {
+
+
+    width: 100%;
+border: none;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 16px;
+    flex: 1;
+
+
+  }
+
+
+  .final-text-big {
+
+    font-size: 84px;
+    margin-top: -20px;
+  }
+
+
+  .final-text-small {
+
+
+    font-size: 32px;
+  }
+
+  .secondary-text {
+    font-size: 24px;
+  }
+
+  .prompt {
+    text-align: center;
+    width: 100%
+  }
+
+  .btn-prim-over {
+
+    font-size: 16px;
+   
+
+  }
+
+  /*.final-container {
+  /*background: none;
+ width: calc(100% - 4px);
+ border-radius: 32px;
+ gap: 80px;
+} */
+
+  .final-container {
+    /*background: none;*/
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    border-radius: 0px;
+    gap: 60px;
+    background: none;
+  }
+
+  
+.body-villagers {
+    background-color: var(--dark-blue);
+    background-image: url("./elements/Images/AdobeStock_633198156_medium.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--gray-light);
+    background-blend-mode: none;
+}
+
+.body-wolves {
+    background-color: var(--dark-blue);
+    background-image: url('./elements/Images/AdobeStock_1623226067.jpeg');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: var(--gray-light);
+    background-blend-mode: none;
+}
+
+}
+

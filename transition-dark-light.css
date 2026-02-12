@@ -1,0 +1,13 @@
+body {
+
+  
+    opacity: 0; /* empieza invisible */
+    animation: fadeInBody 1.3s ease forwards; /* duración 0.8s, delay 0.5s, mantiene estado final */
+  
+  }
+  
+  @keyframes fadeInBody {
+    to {
+      opacity: 1;
+    }
+  }

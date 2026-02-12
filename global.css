@@ -1,0 +1,257 @@
+/* ! Colour variants */ 
+:root {
+    /* Blues */
+    --dark-blue: #222944;
+    --blue-medium: #313C5F;
+    --blue-light: #6A8AF8;
+
+    /* Accents */
+    --accent-red: #BE6B80;
+    --accent-orange: #FFAB69;
+    --accent-turquoise: #7AD7F5;
+
+    /* Grays */
+    --gray-dark: #6B789A;
+    --gray-medium: #E5E8F0;
+    --gray-light: #EAEEF6;
+    --gray-white: #F6F8FA;
+}
+
+
+/* ! Text styles */
+
+/* UltraLight */
+@font-face {
+    font-family: "Saprona";
+    src: url("./elements/font/Saprona-UltraLight.ttf") format("truetype");
+    font-weight: 200; /* UltraLight */
+    font-style: normal;
+}
+
+/* Light */
+@font-face {
+    font-family: "Saprona";
+    src: url("./elements/font/Saprona-Light.ttf") format("truetype");
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+/* Regular */
+@font-face {
+    font-family: "Saprona";
+    src: url("./elements/font/Saprona-Regular.ttf") format("truetype");
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+/* Semibold */
+@font-face {
+    font-family: "Saprona";
+    src: url("./elements/font/Saprona-SemiBold.ttf") format("truetype");
+    font-weight: 500; /* Semibold */
+    font-style: normal;
+}
+
+
+/* h1: 40px UltraLight */
+h1 {
+    font-family: "Saprona", sans-serif;
+    font-weight: 200; /* UltraLight */
+    font-size: 40px;
+}
+
+/* h2: 24px Light */
+h2 {
+    font-family: "Saprona", sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 24px;
+}
+
+/* h3: 20px Light */
+h3 {
+    font-family: "Saprona", sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 20px;
+}
+
+/* h4: 16px Ligh */
+h4 {
+    font-family: "Saprona", sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 16px;
+}
+
+/* p: 12px Regular */
+p {
+    font-family: "Saprona", sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 12px;
+}
+
+a {
+    font-family: "Saprona", sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* extra: 12px Regular */
+
+button, input, label, select, option {
+    font-family: "Saprona", sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 12px;
+}
+
+
+/* ! General adjustments screen*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    display: flex;
+    flex-direction: column;
+   min-height: 100lvh; 
+ 
+    align-items: center;
+    justify-content: center;
+    font-family: "Saprona";
+
+}
+
+
+
+/* ! UI/UI & Icons */
+
+.small-icons {
+    height: 32px;
+    width: auto;
+}
+
+button {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 157px;
+padding: 12px 24px;
+border-radius: 12px;
+color: var(--gray-white);
+appearance: none;
+-webkit-appearance: none;
+border: none;
+}
+
+.buttons {
+display: flex;
+flex-direction: row;
+gap: 16px;
+}
+
+
+.btn-dark {
+background: var(--blue-medium);
+}
+
+.btn-dark:hover {
+   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2); 
+}
+
+.btn-prim {
+background: linear-gradient(199deg, #6A8AF8 4.13%, #3E5192 93.7%);
+}
+
+.btn-prim:hover {
+  
+   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2); 
+}
+
+.btn-light {
+background: var(--gray-medium);
+color: var(--blue-medium);
+}
+
+.btn-light:hover {
+   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.1); 
+}
+
+input {
+    display: flex;
+height: 40px;
+padding: 0 12px;
+align-items: center;
+border-radius: 12px;
+border: 1px solid var(--blue-light);
+background: rgba(234, 238, 246, 0.16);
+ font-family: "Saprona", sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 12px;
+    color: var(--gray-light);
+}
+
+
+
+/* ! Nav bar */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   /*height: 76px;*/
+    padding: 20px 28px;
+    width: 100%; 
+}
+
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; 
+}
+
+.logo-nav {
+height: 32px;
+width: auto;
+}
+
+/*Chatbot*/
+
+.section-wolves {
+    position: relative;
+}
+
+/*PHONE VERSION */
+
+@media (max-width: 700px) {
+    .buttons {
+
+gap: 8px;
+}
+
+nav {
+    
+   height: 60px;
+  
+   padding-bottom: 12px;
+
+} }
+
+
+
+
+

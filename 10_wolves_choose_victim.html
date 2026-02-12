@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./style_dashboard_dark.css">
+    <script defer src="./dashboard.js"></script>
+
+  <script defer src="./phone.js"></script>
+
+  <!-- chatbot -->
+     <link rel="stylesheet" href="chatbot.css">
+    <script defer src="./chatbot.js"></script>
+    <script defer src="./chatbot-API.js"></script>
+<!-- chatbot -->
+
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="nav-left">
+            <img class="logo-nav" src="./elements/icons/logo-gray.svg" alt="">
+            <p>Werewolves Asisstant</p>
+        </div>
+
+        <div class="nav-left">
+            <a href="">
+                <img class="small-icons" src="./elements/icons/light_history.svg" alt="history">
+            </a>
+            <a href="">
+                <img class="small-icons" src="./elements/icons/light_ci_settings.svg" alt="settings">
+            </a>
+        </div>
+    </nav>
+
+
+
+    <main>
+
+             <div class="section-villagers" id="section-villagers">
+
+            <div class="section-header" id="header-villagers">
+                <img class="icon-avatar" src="./elements/icons/3D/gardener.png" alt="villager">
+                <div>
+                    <h2>Villagers</h2>
+                    <h2 id="villagers-alive"></h2>
+                </div>
+            </div>
+
+            <div id="villagers-list" class="list">
+            </div>
+
+        </div>
+
+        <div class="section-center">
+
+            <div class="night-day">
+                <div>
+                    <img src="./elements/icons/3D/night.png" alt="Moon" class="icon-moon">
+                    <h1>Night</h1>
+                </div>
+           
+            </div>
+            <div class="container-row">
+            <div class="row-players" id="row-players"></div>
+</div>
+            <div class="prompt-buttons">
+                <div class="prompt-text">
+
+                    <h1>The wolves can choose their victim silently… then, they close their eyes.</h1>
+                </div>
+                <div class="buttons">
+                    <a href="./9_wolves_open_eyes.html"> <button class="btn-dark">Previous</button> </a>
+                    <a href="./11_player-killed-wolves-1.html"> <button class="btn-prim" id="next-killed-player">Next</button></a>
+
+                </div>
+
+            </div>
+        </div>
+
+      <div class="section-wolves" id="section-wolves">
+
+            <div class="section-header" id="header-wolves">
+                <img class="icon-avatar" src="./elements/icons/3D/wolf.png" alt="villager">
+                <div>
+                    <h2>Werewolves</h2>
+                    <h2 id="werewolves-alive"></h2>
+                </div>
+            </div>
+
+            <div id="werewolves-list" class="list">
+            </div>
+<!-- Start of chatbot -->
+
+<div class="chatbot chatbot-closed" id="chatbot">
+    <div class="chatbot-top chatbot-top-closed" id="chatbot-top">
+        <div class="chatbot-top-right">
+            <img class="robot" id="robot" src="./elements/icons/3D/chatbot.png" alt="Robot chatbot">
+            <p class="title-game">Game Assistant</p>
+        </div>
+        <img class="close close-hidden" id="close" src="./elements/icons/iconamoon_close-light2.svg" alt="Close">
+        <img class="open open-visible" id="open" src="./elements/icons/fe_arrow-down2.svg" alt="Open">
+    </div>
+
+    <div id="conversation" class="conversation conversation-closed">
+        <div>
+            <p>👋 Hi there! I’m your Loup-Garou game assistant. How can I help you today?</p>
+        </div>
+       
+    </div>
+
+    <div class="chatbot-low chatbot-low-closed" id="chatbot-low">
+        <input type="text" placeholder="Type your message here" id="chat-input" class="chat-input">
+        <button class="send-chatbot" id="send-chatbot">
+            <img src="./elements/icons/mynaui_send2.svg" alt="Send">
+        </button>
+    </div>
+</div>
+
+<!-- End of chatbot -->  
+        </div>
+
+    </main>
