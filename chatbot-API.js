@@ -86,7 +86,7 @@ function requestChatGpt(message) {
     DIV_CONTAINER.appendChild(DIV_ANIMATION);
 
     BTN_SEND.disabled = true;
-INPUT_MESSAGE.disabled = true;
+    INPUT_MESSAGE.disabled = true;
 
     //!----
 
@@ -95,19 +95,24 @@ INPUT_MESSAGE.disabled = true;
 
     // Send request
 
-    fetch('https://api.openai.com/v1/chat/completions', { 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            // ⚠️ IMPORTANT: The OpenAI key has been removed for GitHub for security reasons 
-            'Authorization': 'Bearer YOUR_API_KEY_HERE'
-        },
-        body: JSON.stringify({
-            model: 'gpt-5-nano',
-            messages: [
-                {
-                    role: "system",
-                    content: `You are a helpful chatbot for a Loup-Garou game companion app.
+    //⚠️ IMPORTANT: Version for Vercel and GitHub
+    var apiKey = 'YOUR_API_KEY_HERE';
+
+    if (apiKey && apiKey !== 'YOUR_API_KEY_HERE') {
+
+        fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // ⚠️ IMPORTANT: The OpenAI key has been removed for GitHub for security reasons 
+                'Authorization': 'Bearer ' + apiKey
+            },
+            body: JSON.stringify({
+                model: 'gpt-5-nano',
+                messages: [
+                    {
+                        role: "system",
+                        content: `You are a helpful chatbot for a Loup-Garou game companion app.
 
 The app itself guides the mediator through the different phases and assigns roles automatically. Your job is only to answer questions, clear doubts, and provide explanations about the rules, roles, game flow, and general advice.
 
@@ -141,43 +146,50 @@ Here is the sequence of a standard Loup-Garou game. This information is for refe
     - the number of wolves equals the number of villagers.
 
 Do not run or control these steps. The app handles all gameplay. Only explain or clarify the rules when the user asks about them.`
-                },
-                { role: 'user', content: message }
-            ]
+                    },
+                    { role: 'user', content: message }
+                ]
+            })
         })
-    })
-        .then(response => response.json())
-        .then(data => {
-            const reply = data.choices[0].message.content;
-            const P_RESULT = document.createElement('p');
-            const DIV_RESULT = document.createElement('div');
+            .then(response => response.json())
+            .then(data => {
+                const reply = data.choices[0].message.content;
+                const P_RESULT = document.createElement('p');
+                const DIV_RESULT = document.createElement('div');
 
-            DIV_RESULT.appendChild(P_RESULT);
-            DIV_CONTAINER.appendChild(DIV_RESULT);
+                DIV_RESULT.appendChild(P_RESULT);
+                DIV_CONTAINER.appendChild(DIV_RESULT);
 
-            P_RESULT.textContent = reply;
-            console.log(reply);
+                P_RESULT.textContent = reply;
+                console.log(reply);
 
-            DIV_CONTAINER.scrollTop = DIV_CONTAINER.scrollHeight
-        })
-        .catch(error => {
-            console.error("Error:", error);
+                DIV_CONTAINER.scrollTop = DIV_CONTAINER.scrollHeight
+            })
+            .catch(error => {
+                console.error("Error:", error);
 
-            const P_ERROR = document.createElement('p');
-            const DIV_ERROR = document.createElement('div');
-            P_ERROR.textContent = 'Error connecting to server';
-            DIV_ERROR.appendChild(P_ERROR);
-            DIV_CONTAINER.appendChild(DIV_ERROR);
+                const P_ERROR = document.createElement('p');
+                const DIV_ERROR = document.createElement('div');
+                P_ERROR.textContent = 'Error connecting to server';
+                DIV_ERROR.appendChild(P_ERROR);
+                DIV_CONTAINER.appendChild(DIV_ERROR);
 
-        })
-        .finally(() => { // !Animation and activate send again
-            DIV_ANIMATION.remove();
-            BTN_SEND.disabled = false;
-INPUT_MESSAGE.disabled = false;
-        });
+            })
+            .finally(() => { // !Animation and activate send again
+                DIV_ANIMATION.remove();
+                BTN_SEND.disabled = false;
+                INPUT_MESSAGE.disabled = false;
+            });
+
+    } else {
+        console.log("Chatbot disabled: no token");
+        const P_INFO = document.createElement('p');
+        P_INFO.textContent = "Chatbot deactivated: no API token available.";
+        DIV_CONTAINER.appendChild(P_INFO);
+    }
+
+
+
 }
-
-
-
 
 
